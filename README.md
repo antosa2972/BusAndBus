@@ -1,2 +1,2 @@
 # Bus&Bus
-Travel web service
+Travel service
