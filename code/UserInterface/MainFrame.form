@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="UserInterface.MainFrame">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="5" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1319" height="443"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="bcd1f" class="javax.swing.JLabel" binding="header">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI Black" size="35"/>
+          <text value="Лучшие пассажирские перевозки по Беларуси"/>
+        </properties>
+      </component>
+      <component id="7f376" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="30"/>
+            <preferred-size width="150" height="30"/>
+            <maximum-size width="-1" height="30"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="d4d75" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="30"/>
+            <preferred-size width="150" height="30"/>
+            <maximum-size width="-1" height="30"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="6f01c" class="javax.swing.JButton" binding="findButton">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8023297"/>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;НАЙТИ&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <grid id="f9cf9" binding="secondPanel" layout-manager="GridLayoutManager" row-count="8" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="65f77" class="javax.swing.JButton" binding="MinskLogoysk">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="290" height="50"/>
+                <preferred-size width="290" height="50"/>
+                <maximum-size width="290" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-8023297"/>
+              <text value="Минск - Логойск                                от 3 BYR"/>
+            </properties>
+          </component>
+          <vspacer id="babcd">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="b6cfb">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="794ba">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="4163d" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Monospaced" size="25" style="1"/>
+              <text value="Популярные маршруты"/>
+            </properties>
+          </component>
+          <vspacer id="70ae">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="887c1" class="javax.swing.JButton" binding="MinskBelynichi">
+            <constraints>
+              <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="290" height="50"/>
+                <preferred-size width="290" height="50"/>
+                <maximum-size width="290" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-8023297"/>
+              <text value="Минск - Белыничи                             от 7 BYR"/>
+            </properties>
+          </component>
+          <component id="89e8f" class="javax.swing.JButton" binding="MinskShuchin">
+            <constraints>
+              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="290" height="50"/>
+                <preferred-size width="290" height="50"/>
+                <maximum-size width="290" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-8023297"/>
+              <text value="Минск - Щучин                                от 15 BYR"/>
+            </properties>
+          </component>
+          <component id="b6669" class="javax.swing.JButton" binding="MinskMogilev">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="290" height="50"/>
+                <preferred-size width="290" height="50"/>
+                <maximum-size width="290" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-8023297"/>
+              <text value="Минск - Могилев                               от 7 BYR"/>
+            </properties>
+          </component>
+          <component id="4e036" class="javax.swing.JButton" binding="MinskGrodno">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="290" height="50"/>
+                <preferred-size width="290" height="50"/>
+                <maximum-size width="290" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-8023297"/>
+              <text value="Минск - Гродно                                 от 10 BYR"/>
+            </properties>
+          </component>
+          <component id="625a7" class="javax.swing.JButton" binding="MinskMolodechno">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="290" height="50"/>
+                <preferred-size width="290" height="50"/>
+                <maximum-size width="290" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-8023297"/>
+              <text value="Минск - Молодечно                        от 5 BYR"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="799fe" class="javax.swing.JSpinner" binding="spinner1" default-binding="true">
+        <constraints>
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="250" height="30"/>
+            <preferred-size width="250" height="30"/>
+            <maximum-size width="250" height="30"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="3fe6c" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="200" height="30"/>
+            <preferred-size width="200" height="30"/>
+            <maximum-size width="200" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
+          <enabled value="true"/>
+        </properties>
+      </component>
+      <component id="3b32" class="javax.swing.JLabel" binding="from">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;Откуда&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <component id="ffabc" class="javax.swing.JLabel" binding="where">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;Куда&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <component id="b22a0" class="javax.swing.JLabel" binding="date">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;Дата&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <component id="e61aa" class="javax.swing.JLabel" binding="numOfPass">
+        <constraints>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;Количество пассажиров&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <component id="ed732" class="javax.swing.JButton" binding="showMyOrders">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8023297"/>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;МОИ ЗАКАЗЫ&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <component id="6e844" class="javax.swing.JLabel" binding="imegeLabel">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="1039d" class="javax.swing.JButton" binding="reviewsBtn">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8023297"/>
+          <text value="&lt;html&gt;&lt;h3 style=&quot;text-align: center; color: ;&quot;&gt;&lt;span style=&quot;border-bottom: 4px solid #c82828;&quot;&gt;ОТЗЫВЫ&lt;/html&gt;"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
