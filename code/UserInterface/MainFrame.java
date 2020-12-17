@@ -1,18 +1,19 @@
 package UserInterface;
 import Clients.Client;
 import Clients.ClientsService;
+import Controller.Controller;
 import DataBaseWork.DB_Orders_Work;
 import DataBaseWork.DB_Reviews_Work;
 import TimeWork.TimeWork;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
 public class MainFrame extends JFrame{
     String [] dates;
     private JPanel panelMain;
@@ -44,11 +45,7 @@ public class MainFrame extends JFrame{
             comboBox1.addItem(s);
         }
         this.client=client;
-        try {
-            this.setIconImage(ImageIO.read(new File("E://tritpo//BusAndBus/src/main/java/UserInterface/img1.png")));
-        }catch (IOException e){
-
-        }
+        Controller.setImage(this);
         spinner1.setModel(new SpinnerNumberModel(1,1,4,1));
         this.setContentPane(this.getPanelMain());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -56,11 +53,27 @@ public class MainFrame extends JFrame{
         this.setVisible(true);
         this.setLocation(300,200);
         this.setSize(1030,550);
+        textField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(textField1.getText().length()>=15){
+                    e.consume();
+                }
+            }
+        });
+        textField2.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(textField2.getText().length()>=15){
+                    e.consume();
+                }
+            }
+        });
         findButton.setFocusPainted(false);
         this.getRootPane().setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         findButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                selectOrder(from.getText(),where.getText());
+                selectOrder(textField1.getText(),textField2.getText());
             }
         });
                 MinskGrodno.addActionListener(new ActionListener() {

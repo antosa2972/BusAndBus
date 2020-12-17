@@ -14,13 +14,15 @@ public class FramesService {
             case ORDERINFO:
                 return createOrderInfoFrame(client);
             case CLIENTSEARCH:
-                return createOrderInfoFrame(client);
+                return createClientSearchFrame(client.getUsername());
             case REGISTRATION:
                 return createRegiistrationFrame();
             case AUTHORIZATION:
                 return createAuthorizationFrame();
             case SHOWREVIEWS:
                 return createShowReviews();
+            case DRIVERFRAME:
+                return createDriverFrame();
             default:
                 throw new IllegalArgumentException("Wrong frame"+type);
         }
@@ -32,7 +34,8 @@ public class FramesService {
         REVIEWS,
         MAIN,
         CLIENTSEARCH,
-        SHOWREVIEWS
+        SHOWREVIEWS,
+        DRIVERFRAME
     }
     private static JFrame createAuthorizationFrame(){ return new AuthorizationFrame("Вход"); }
     private static JFrame createRegiistrationFrame(){
@@ -49,5 +52,11 @@ public class FramesService {
     }
     private static JFrame createShowReviews(){
         return new ShowReviewsFrame("Отзывы");
+    }
+    private static JFrame createDriverFrame(){
+        return new DriverFrame("Меню");
+    }
+    private static JFrame createClientSearchFrame(String route){
+        return new ClientSearchFrame("Пассажиры",route);
     }
 }

@@ -2,6 +2,7 @@ package UserInterface;
 
 import Clients.Client;
 import Clients.ClientsService;
+import Controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,6 +21,7 @@ public class ReviewsFrame extends JFrame {
         this.setLayout(null);
         this.setVisible(true);
         this.setResizable(false);
+        Controller.setImage(this);
         this.setSize(480,240);
         this.setLocation(500,300);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -36,7 +38,7 @@ public class ReviewsFrame extends JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
                 char input=e.getKeyChar();
-                if(input>'0'&&input<'9'||writeHere.getText().length()>300){
+                if(input>'0'&&input<'9'||writeHere.getText().length()>=300){
                     e.consume();
                 }
             }

@@ -1,4 +1,5 @@
 package TimeWork;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -17,6 +18,8 @@ public class TimeWork {
         return curDate;
     }
     public static String getCurTime(){
-        return new Date().toString();
+        Date dateNow = new Date();
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
+        return formatForDateNow.format(dateNow);
     }
 }

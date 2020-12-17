@@ -1,4 +1,6 @@
 package DataBaseWork;
+import TimeWork.TimeWork;
+
 import java.sql.*;
 import java.util.ArrayList;
 public class DB_Orders_Work {
@@ -109,6 +111,45 @@ public class DB_Orders_Work {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
+        }
+    }
+    public static ArrayList<String > findRoute(String route){
+        int uniqNum=0;
+        ArrayList<String> clientsAtRoute = new ArrayList<>();
+        for(int i=0;i<TimeWork.getDates()[0].length();i++){
+            uniqNum+=TimeWork.getDates()[0].charAt(i);
+        }
+        for(int i=0;i<route.length();i++){
+            uniqNum+=route.charAt(i);
+        }
+        String sql="select name_of_client,price from orders.order_list where num_of_route='"+uniqNum+"'";
+        try {
+            Statement statement =connection.createStatement();
+            ResultSet resultSet =statement.executeQuery(sql);
+            while (resultSet.next()){
+                clientsAtRoute.add(resultSet.getString(1)+"       "+resultSet.getInt(2)+"BYN");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return clientsAtRoute;
+    }
+    public static void deleteUsers(String route){
+        int uniqNum=0;
+        String temp=" ";
+        temp+=TimeWork.getCurTime();
+        for(int i=0;i<temp.length();i++){
+            uniqNum+=temp.charAt(i);
+        }
+        for(int i=0;i<route.length();i++){
+            uniqNum+=route.charAt(i);
+        }
+        String sql = "delete from orders.order_list where order_list.num_of_route='" + uniqNum + "'";
+        try {
+            Statement statement = connection.createStatement();
+            int result = statement.executeUpdate(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 }

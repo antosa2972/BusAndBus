@@ -2,6 +2,7 @@ package UserInterface;
 
 import Clients.Client;
 import Clients.ClientsService;
+import Controller.Controller;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -20,11 +21,7 @@ public class OrderInfoFrame extends JFrame {
     private int ind=1;
     public OrderInfoFrame(String winName, final Client client){
         super(winName);
-        try {
-            this.setIconImage(ImageIO.read(new File("E://tritpo//BusAndBus/src/main/java/UserInterface/img1.png")));
-        }catch (IOException e){
-
-        }
+        Controller.setImage(this);
         this.client=client;
         this.setVisible(true);
         this.setLayout(null);

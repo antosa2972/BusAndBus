@@ -1,9 +1,7 @@
 package UserInterface;
-import javax.imageio.ImageIO;
+import Controller.Controller;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ShowReviewsFrame extends JFrame {
@@ -19,11 +17,7 @@ public class ShowReviewsFrame extends JFrame {
         jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         this.add(jScrollPane);
         jScrollPane.setBounds(0,0,600,340);
-        try {
-            this.setIconImage(ImageIO.read(new File("E://tritpo//BusAndBus/src/main/java/UserInterface/img1.png")));
-        }catch (IOException e){
-
-        }
+        Controller.setImage(this);
         this.setSize(600,340);
         this.setLocation(500,300);
     }

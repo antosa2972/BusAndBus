@@ -4,11 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import Clients.Client;
-import Clients.ClientsService;
+import Controller.Authorization;
+import Controller.Controller;
+
 public class AuthorizationFrame extends JFrame {
     private final JTextField loginField = new JTextField();
     private final JPasswordField passwordField = new JPasswordField();
@@ -17,11 +19,7 @@ public class AuthorizationFrame extends JFrame {
     private Client client = new Client();
    public AuthorizationFrame(String winName){
        super(winName);
-       try {
-           this.setIconImage(ImageIO.read(new File("E://tritpo//BusAndBus/src/main/java/UserInterface/img1.png")));
-       }catch (IOException e){
-
-       }
+       Controller.setImage(this);
        this.setLayout(null);
        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
        this.setResizable(false);
@@ -49,6 +47,22 @@ public class AuthorizationFrame extends JFrame {
        enter.setBounds(10,80,120,20);
        this.add(register);
        this.add(error);
+       loginField.addKeyListener(new KeyAdapter() {
+           @Override
+           public void keyTyped(KeyEvent e) {
+               if(loginField.getText().length()>=15){
+                   e.consume();
+               }
+           }
+       });
+       passwordField.addKeyListener(new KeyAdapter() {
+           @Override
+           public void keyTyped(KeyEvent e) {
+               if(passwordField.getText().length()>=20){
+                   e.consume();
+               }
+           }
+       });
        error.setBounds(10,110,300,20);
        checkBox.setBounds(190,110,300,20);
        error.setText("Добро пожаловать в Bus&Bus!");
@@ -57,7 +71,11 @@ public class AuthorizationFrame extends JFrame {
        register.setFocusPainted(false);
        enter.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent e) {
-               switch (ClientsService.logIn(loginField.getText(),passwordField.getText())){
+               int flg=1;
+               if(checkBox.isSelected()) {
+                   flg=0;
+               }
+               switch (Authorization.authenticate(loginField.getText(),passwordField.getText(),flg)){
                    case 0:
                        dispose();
                        client.setUsername(loginField.getText());
@@ -66,8 +84,12 @@ public class AuthorizationFrame extends JFrame {
                    case 1:
                        error.setText("Пустое поле");
                        break;
-                   case 2:
+                   case 2: //case 0xFFFFFFFF:
                        error.setText("Неправильный логин или пароль");
+                       break;
+                   case 4:
+                       dispose();
+                       JFrame driverFrame = FramesService.createFrame(FramesService.FramesType.DRIVERFRAME,null);
                }
            }
        });

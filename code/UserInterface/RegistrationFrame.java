@@ -4,9 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import Clients.ClientsService;
+import Controller.Controller;
 
 public class RegistrationFrame extends JFrame {
     private final JTextField loginField = new JTextField();
@@ -15,11 +18,7 @@ public class RegistrationFrame extends JFrame {
     private final JLabel status = new JLabel();
     public RegistrationFrame(String winName) {
         super(winName);
-        try {
-            this.setIconImage(ImageIO.read(new File("E://tritpo//BusAndBus/src/main/java/UserInterface/img1.png")));
-        }catch (IOException e){
-
-        }
+        Controller.setImage(this);
         this.setLayout(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
@@ -49,6 +48,30 @@ public class RegistrationFrame extends JFrame {
         this.add(status);
         status.setBounds(132,100,300,20);
         register.setFocusPainted(false);
+        loginField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(loginField.getText().length()>=15){
+                    e.consume();
+                }
+            }
+        });
+        passwordField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(passwordField.getText().length()>=15){
+                    e.consume();
+                }
+            }
+        });
+        passwordField2.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(passwordField2.getText().length()>=15){
+                    e.consume();
+                }
+            }
+        });
         register.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 switch (ClientsService.register(loginField.getText(),passwordField.getText(),passwordField2.getText())){
